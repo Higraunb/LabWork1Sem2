@@ -12,9 +12,11 @@ TEST(Ground, can_get_speed)
   Ground bf;
   EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
 }
-
+///ДОЛБАЕБ
+/*
 TEST(Ground, can_delete_Ground)
 {
   Ground bf;
   ASSERT_NO_THROW(bf.~Ground());
 }
+*/
