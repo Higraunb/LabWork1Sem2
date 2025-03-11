@@ -1,10 +1,10 @@
 #pragma once
 #include "HSpecial.h"
-class FireTruck : public SpecialCar
+class TFireTruck : public TSpecialCar
 {
 public:
-	FireTruck();
-	FireTruck(string name_, string location_, string calor_, 
+	TFireTruck();
+	TFireTruck(string name_, string location_, string calor_, 
 		string specification_, double speed);
 	string GetName()  override;
 	string GetLocation() override;
@@ -12,8 +12,8 @@ public:
 	string GetSpecification() const override;
 	double GetSpeed() const;
 	unsigned GetCountOfPeople();
-	friend istream& operator >> (istream& counter, FireTruck& varidle_);
-	friend ostream& operator << (ostream& counter, FireTruck& varidle_);
+	friend istream& operator >> (istream& counter, TFireTruck& varidle_);
+	friend ostream& operator << (ostream& counter, TFireTruck& varidle_);
 protected:
 	string name, location, color, specification;
 	double speed;

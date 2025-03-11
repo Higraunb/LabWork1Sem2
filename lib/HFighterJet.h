@@ -1,10 +1,10 @@
 #pragma once
 #include "HPlane.h"
-class FighterJet : public Plane
+class TFighterJet : public TPlane
 {
 public:
-	FighterJet();
-	FighterJet(string name_, string location_, string calor_,
+	TFighterJet();
+	TFighterJet(string name_, string location_, string calor_,
 		string specification_, double speed_);
 	double GetFAltitude() override;
 	string GetName()  override;
@@ -14,9 +14,9 @@ public:
 	double GetSpeed() const;
 	double GetWeight();
 	double GetEngineCapacity();
-	friend istream& operator >> (istream& counter, FighterJet& varidle_);
-	friend ostream& operator << (ostream& counter, FighterJet& varidle_);
+	friend istream& operator >> (istream& counter, TFighterJet& varidle_);
+	friend ostream& operator << (ostream& counter, TFighterJet& varidle_);
 protected:
 	string name, location, color, specification;
-	double speed, FAltitude, weight, engine_capacity;
+	double speed, faltitude, weight, engine_capacity;
 };

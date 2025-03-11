@@ -1,6 +1,6 @@
 #include "HSpecial.h"
 
-SpecialCar::SpecialCar(string name_, string location_, string calor_, 
+TSpecialCar::TSpecialCar(string name_, string location_, string calor_, 
 	string specification_, double speed_): name{ name_ }, location{ location_ }
 	, color{ calor_ }, specification{ specification_ }, speed{speed_}
 {
@@ -10,15 +10,15 @@ SpecialCar::SpecialCar(string name_, string location_, string calor_,
 	}
 }
 
-SpecialCar::SpecialCar() : speed(0.0), name("Special transport"),
+TSpecialCar::TSpecialCar() : speed(0.0), name("Special transport"),
 location("Ground"), color("Red"), specification("Special")
 {}
 
-SpecialCar::~SpecialCar()
+TSpecialCar::~TSpecialCar()
 {
 }
 
-ostream& operator << (ostream& counter, SpecialCar& varidle_)
+ostream& operator << (ostream& counter, TSpecialCar& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -34,7 +34,7 @@ ostream& operator << (ostream& counter, SpecialCar& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, SpecialCar& varidle_)
+istream& operator >> (istream& counter, TSpecialCar& varidle_)
 {
 	cout << "Enter the car brand" << endl;
 	counter >> varidle_.name;
@@ -51,28 +51,28 @@ istream& operator >> (istream& counter, SpecialCar& varidle_)
 	return counter;
 }
 
-string SpecialCar::GetLocation()
+string TSpecialCar::GetLocation()
 {
 	return location;
 }
 
 
-string SpecialCar::GetName()
+string TSpecialCar::GetName()
 {
 	return name;
 }
 
-string SpecialCar::GetCalor()
+string TSpecialCar::GetCalor()
 {
 	return color;
 }
 
-string SpecialCar::GetSpecification() const
+string TSpecialCar::GetSpecification() const
 {
 	return specification;
 }
 
-double SpecialCar::GetSpeed()
+double TSpecialCar::GetSpeed()
 {
 	return speed;
 }

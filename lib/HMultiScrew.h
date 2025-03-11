@@ -1,10 +1,10 @@
 #pragma once
 #include "HHelicopter.h"
-class MultiScrew : public Helicopter
+class TMultiScrew : public THelicopter
 {
 public:
-	MultiScrew();
-	MultiScrew(string name_, string location_, string calor_,
+	TMultiScrew();
+	TMultiScrew(string name_, string location_, string calor_,
 		string specification_, double speed_);
 	double GetFAltitude() override;
 	string GetName()  override;
@@ -14,9 +14,9 @@ public:
 	double GetSpeed() const;
 	double GetWeight();
 	double GetEngineCapacity();
-	friend istream& operator >> (istream& counter, MultiScrew& varidle_);
-	friend ostream& operator << (ostream& counter, MultiScrew& varidle_);
+	friend istream& operator >> (istream& counter, TMultiScrew& varidle_);
+	friend ostream& operator << (ostream& counter, TMultiScrew& varidle_);
 protected:
 	string name, location, color, specification;
-	double speed, FAltitude, weight, engine_capacity;
+	double speed, faltitude, weight, engine_capacity;
 };

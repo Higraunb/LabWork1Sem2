@@ -1,31 +1,31 @@
 #include "HHelicopter.h"
 
-Helicopter::Helicopter(string name_, string location_, string calor_,
+THelicopter::THelicopter(string name_, string location_, string calor_,
 	string specification_, double speed_) : name{ name_ }, location{ location_ }
-	, color{ calor_ }, specification{ specification_ }, speed{ speed_ }, FAltitude{ 0.0 }
+	, color{ calor_ }, specification{ specification_ }, speed{ speed_ }, faltitude{ 0.0 }
 {
 	if (speed < 0)
 	{
 		throw("Speed < 0 ");
 	}
-	if (FAltitude < 0)
+	if (faltitude < 0)
 	{
 		throw("Speed < 0 ");
 	}
 }
 
-Helicopter::Helicopter() : speed(0.0), name("Helicopter"),
-location("Air"), color("Red"), specification("Mi - 26"), FAltitude(0.0)
+THelicopter::THelicopter() : speed(0.0), name("Helicopter"),
+location("Air"), color("Red"), specification("Mi - 26"), faltitude(0.0)
 {}
 
-Helicopter::~Helicopter()
+THelicopter::~THelicopter()
 {
 }
-double Helicopter::GetFAltitude()
+double THelicopter::GetFAltitude()
 {
-	return FAltitude;
+	return faltitude;
 }
-ostream& operator << (ostream& counter, Helicopter& varidle_)
+ostream& operator << (ostream& counter, THelicopter& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -37,7 +37,7 @@ ostream& operator << (ostream& counter, Helicopter& varidle_)
 	{
 		throw("Speed < 0 ");
 	}
-	if (varidle_.FAltitude < 0)
+	if (varidle_.faltitude < 0)
 	{
 		throw("Speed < 0 ");
 	}
@@ -46,7 +46,7 @@ ostream& operator << (ostream& counter, Helicopter& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, Helicopter& varidle_)
+istream& operator >> (istream& counter, THelicopter& varidle_)
 {
 	cout << "Enter the Helicopter brand" << endl;
 	counter >> varidle_.name;
@@ -55,34 +55,34 @@ istream& operator >> (istream& counter, Helicopter& varidle_)
 	cout << "Enter the Helicopter speed" << endl;
 	counter >> varidle_.speed;
 	cout << "Enter the Flight Alitude" << endl;
-	counter >> varidle_.FAltitude;
+	counter >> varidle_.faltitude;
 	system("pause");
 	system("cls");
 	return counter;
 }
 
-string Helicopter::GetLocation()
+string THelicopter::GetLocation()
 {
 	return location;
 }
 
 
-string Helicopter::GetName()
+string THelicopter::GetName()
 {
 	return name;
 }
 
-string Helicopter::GetCalor()
+string THelicopter::GetCalor()
 {
 	return color;
 }
 
-string Helicopter::GetSpecification() const
+string THelicopter::GetSpecification() const
 {
 	return specification;
 }
 
-double Helicopter::GetSpeed()
+double THelicopter::GetSpeed()
 {
 	return speed;
 }

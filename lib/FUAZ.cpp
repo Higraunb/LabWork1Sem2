@@ -1,6 +1,6 @@
 #include "HUAZ.h"
 
-UAZ::UAZ(string name_, string location_, string calor_,
+TUAZ::TUAZ(string name_, string location_, string calor_,
 	string specification_, double speed_) : name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{ speed_ }, carcapacity(4)
 {
@@ -10,11 +10,11 @@ UAZ::UAZ(string name_, string location_, string calor_,
 	}
 }
 
-UAZ::UAZ() : speed(0.0), name("UAZ"),
+TUAZ::TUAZ() : speed(0.0), name("UAZ"),
 location("Ground"), color("Red"), specification("UAZ-452"), carcapacity(8)
 {}
 
-ostream& operator << (ostream& counter, UAZ& varidle_)
+ostream& operator << (ostream& counter, TUAZ& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -27,7 +27,7 @@ ostream& operator << (ostream& counter, UAZ& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, UAZ& varidle_)
+istream& operator >> (istream& counter, TUAZ& varidle_)
 {
 	cout << "Enter the car brand" << endl;
 	counter >> varidle_.name;
@@ -50,32 +50,32 @@ istream& operator >> (istream& counter, UAZ& varidle_)
 	return counter;
 }
 
-string UAZ::GetSpecification() const
+string TUAZ::GetSpecification() const
 {
 	return specification;
 }
 
-string UAZ::GetLocation()
+string TUAZ::GetLocation()
 {
 	return location;
 }
 
-string UAZ::GetName()
+string TUAZ::GetName()
 {
 	return name;
 }
 
-string UAZ::GetCalor()
+string TUAZ::GetCalor()
 {
 	return color;
 }
 
 
-double UAZ::GetSpeed()
+double TUAZ::GetSpeed()
 {
 	return speed;
 }
-unsigned UAZ::GetCountOfPeople()
+unsigned TUAZ::GetCountOfPeople()
 {
 	return carcapacity;
 }

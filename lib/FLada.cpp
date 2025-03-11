@@ -1,6 +1,6 @@
 #include "HLada.h"
 
-Lada::Lada(string name_, string location_, string calor_,
+TLada::TLada(string name_, string location_, string calor_,
 	string specification_,double speed_): name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{speed_}, carcapacity(4)
 {
@@ -10,11 +10,11 @@ Lada::Lada(string name_, string location_, string calor_,
 	}
 }
 
-Lada::Lada() : speed(0.0), name("Lada"),
+TLada::TLada() : speed(0.0), name("Lada"),
 location("Ground"), color("Red"), specification("Lada Granta"), carcapacity(4)
 {}
 
-ostream& operator << (ostream& counter, Lada& varidle_)
+ostream& operator << (ostream& counter, TLada& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -27,7 +27,7 @@ ostream& operator << (ostream& counter, Lada& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, Lada& varidle_)
+istream& operator >> (istream& counter, TLada& varidle_)
 {
 	cout << "Enter the car brand" << endl;
 	counter >> varidle_.name;
@@ -50,32 +50,32 @@ istream& operator >> (istream& counter, Lada& varidle_)
 	return counter;
 }
 
-string Lada::GetSpecification() const
+string TLada::GetSpecification() const
 {
 	return specification;
 }
 
-string Lada::GetLocation()
+string TLada::GetLocation()
 {
 	return location;
 }
 
-string Lada::GetName()
+string TLada::GetName()
 {
 	return name;
 }
 
-string Lada::GetCalor()
+string TLada::GetCalor()
 {
 	return color;
 }
 
 
-double Lada::GetSpeed()
+double TLada::GetSpeed()
 {
 	return speed;
 }
-unsigned Lada::GetCountOfPeople()
+unsigned TLada::GetCountOfPeople()
 {
 	return carcapacity;
 }

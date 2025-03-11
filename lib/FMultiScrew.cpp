@@ -1,15 +1,15 @@
 #include "HMultiScrew.h"
 
-MultiScrew::MultiScrew(string name_, string location_, string calor_,
+TMultiScrew::TMultiScrew(string name_, string location_, string calor_,
 	string specification_, double speed_) : name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	FAltitude(0.0), weight(2.5), engine_capacity(580)
+	faltitude(0.0), weight(2.5), engine_capacity(580)
 {
 	if ((speed < 0) && (speed >= 180))
 	{
 		throw("Speed < 0 ");
 	}
-	if (FAltitude < 0)
+	if (faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -19,11 +19,11 @@ MultiScrew::MultiScrew(string name_, string location_, string calor_,
 	}
 }
 
-MultiScrew::MultiScrew() : speed(130.0), name("Mi-1"),
+TMultiScrew::TMultiScrew() : speed(130.0), name("Mi-1"),
 location("Air"), color("Red"), specification("MultiScrew"),
-weight(2.5), FAltitude(0.0), engine_capacity(580)
+weight(2.5), faltitude(0.0), engine_capacity(580)
 {}
-ostream& operator << (ostream& counter, MultiScrew& varidle_)
+ostream& operator << (ostream& counter, TMultiScrew& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -38,7 +38,7 @@ ostream& operator << (ostream& counter, MultiScrew& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, MultiScrew& varidle_)
+istream& operator >> (istream& counter, TMultiScrew& varidle_)
 {
 	cout << "Enter the Cornhusker brand" << endl;
 	counter >> varidle_.name;
@@ -47,7 +47,7 @@ istream& operator >> (istream& counter, MultiScrew& varidle_)
 	cout << "Enter the Cornhusker speed" << endl;
 	counter >> varidle_.speed;
 	cout << "Enter the Flight Alitude" << endl;
-	counter >> varidle_.FAltitude;
+	counter >> varidle_.faltitude;
 	cout << "Enter the Weight" << endl;
 	counter >> varidle_.weight;
 	cout << "Enter the Engine Capacity" << endl;
@@ -56,7 +56,7 @@ istream& operator >> (istream& counter, MultiScrew& varidle_)
 	{
 		throw("Speed < 0 ");
 	}
-	if (varidle_.FAltitude < 0)
+	if (varidle_.faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -73,43 +73,43 @@ istream& operator >> (istream& counter, MultiScrew& varidle_)
 	return counter;
 }
 
-string MultiScrew::GetSpecification() const
+string TMultiScrew::GetSpecification() const
 {
 	return specification;
 }
 
-string MultiScrew::GetLocation()
+string TMultiScrew::GetLocation()
 {
 	return location;
 }
 
-string MultiScrew::GetName()
+string TMultiScrew::GetName()
 {
 	return name;
 }
 
-string MultiScrew::GetCalor()
+string TMultiScrew::GetCalor()
 {
 	return color;
 }
 
 
-double MultiScrew::GetSpeed() const
+double TMultiScrew::GetSpeed() const
 {
 	return speed;
 }
 
-double MultiScrew::GetFAltitude()
+double TMultiScrew::GetFAltitude()
 {
-	return FAltitude;
+	return faltitude;
 }
 
-double MultiScrew::GetWeight()
+double TMultiScrew::GetWeight()
 {
 	return weight;
 }
 
-double MultiScrew::GetEngineCapacity()
+double TMultiScrew::GetEngineCapacity()
 {
 	return engine_capacity;
 }

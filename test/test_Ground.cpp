@@ -2,14 +2,14 @@
 
 #include <gtest.h>
 
-TEST(Ground, can_create_Ground)
+TEST(TGround, can_create_Ground)
 {
-  ASSERT_NO_THROW(Ground bf);
+  ASSERT_NO_THROW(TGround bf);
 }
 
-TEST(Ground, can_get_speed)
+TEST(TGround, can_get_speed)
 {
-  Ground bf;
+  TGround bf;
   EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
 }
 ///ДОЛБАЕБ

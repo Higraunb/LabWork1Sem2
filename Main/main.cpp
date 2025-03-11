@@ -11,9 +11,9 @@
 #include "HUAZ.h"
 int main()
 {
-	Lada f;
+	TLada f;
 	cin >> f;
 	cout << f;
-	Ambulance a;
+	TAmbulance a;
 	cout << a;
 }

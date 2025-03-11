@@ -1,15 +1,15 @@
 #include "HSingleRotor.h"
 
-SingleRotor::SingleRotor(string name_, string location_, string calor_,
+TSingleRotor::TSingleRotor(string name_, string location_, string calor_,
 	string specification_, double speed_) : name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	FAltitude(0.0), weight(28.5), engine_capacity(11400)
+	faltitude(0.0), weight(28.5), engine_capacity(11400)
 {
 	if ((speed < 0) && (speed >= 270))
 	{
 		throw("Speed < 0 ");
 	}
-	if (FAltitude < 0)
+	if (faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -19,11 +19,11 @@ SingleRotor::SingleRotor(string name_, string location_, string calor_,
 	}
 }
 
-SingleRotor::SingleRotor() : speed(200.0), name("Mi-26"),
+TSingleRotor::TSingleRotor() : speed(200.0), name("Mi-26"),
 location("Air"), color("Red"), specification("SingleRotor"),
-weight(28.5), FAltitude(0.0), engine_capacity(11400)
+weight(28.5), faltitude(0.0), engine_capacity(11400)
 {}
-ostream& operator << (ostream& counter, SingleRotor& varidle_)
+ostream& operator << (ostream& counter, TSingleRotor& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -38,7 +38,7 @@ ostream& operator << (ostream& counter, SingleRotor& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, SingleRotor& varidle_)
+istream& operator >> (istream& counter, TSingleRotor& varidle_)
 {
 	cout << "Enter the Cornhusker brand" << endl;
 	counter >> varidle_.name;
@@ -47,7 +47,7 @@ istream& operator >> (istream& counter, SingleRotor& varidle_)
 	cout << "Enter the Cornhusker speed" << endl;
 	counter >> varidle_.speed;
 	cout << "Enter the Flight Alitude" << endl;
-	counter >> varidle_.FAltitude;
+	counter >> varidle_.faltitude;
 	cout << "Enter the Weight" << endl;
 	counter >> varidle_.weight;
 	cout << "Enter the Engine Capacity" << endl;
@@ -56,7 +56,7 @@ istream& operator >> (istream& counter, SingleRotor& varidle_)
 	{
 		throw("Speed < 0 ");
 	}
-	if (varidle_.FAltitude < 0)
+	if (varidle_.faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -73,43 +73,43 @@ istream& operator >> (istream& counter, SingleRotor& varidle_)
 	return counter;
 }
 
-string SingleRotor::GetSpecification() const
+string TSingleRotor::GetSpecification() const
 {
 	return specification;
 }
 
-string SingleRotor::GetLocation()
+string TSingleRotor::GetLocation()
 {
 	return location;
 }
 
-string SingleRotor::GetName()
+string TSingleRotor::GetName()
 {
 	return name;
 }
 
-string SingleRotor::GetCalor()
+string TSingleRotor::GetCalor()
 {
 	return color;
 }
 
 
-double SingleRotor::GetSpeed() const
+double TSingleRotor::GetSpeed() const
 {
 	return speed;
 }
 
-double SingleRotor::GetFAltitude()
+double TSingleRotor::GetFAltitude()
 {
-	return FAltitude;
+	return faltitude;
 }
 
-double SingleRotor::GetWeight()
+double TSingleRotor::GetWeight()
 {
 	return weight;
 }
 
-double SingleRotor::GetEngineCapacity()
+double TSingleRotor::GetEngineCapacity()
 {
 	return engine_capacity;
 }

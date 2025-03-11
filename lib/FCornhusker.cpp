@@ -1,15 +1,15 @@
 #include "HCornhusker.h"
 
-Cornhusker::Cornhusker(string name_, string location_, string calor_,
+TCornhusker::TCornhusker(string name_, string location_, string calor_,
 	string specification_, double speed_) : name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	FAltitude(0.0), weight(3.4), engine_capacity(1000)
+	faltitude(0.0), weight(3.4), engine_capacity(1000)
 {
 	if ((speed < 0) && (speed >= 170))
 	{
 		throw("Speed < 0 ");
 	}
-	if (FAltitude < 0)
+	if (faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -19,11 +19,11 @@ Cornhusker::Cornhusker(string name_, string location_, string calor_,
 	}
 }
 
-Cornhusker::Cornhusker() : speed(130.0), name("An-2"),
+TCornhusker::TCornhusker() : speed(130.0), name("An-2"),
 location("Air"), color("Red"), specification("Cornhusker"),
-weight(3.4), FAltitude(0.0), engine_capacity(1000)
+weight(3.4), faltitude(0.0), engine_capacity(1000)
 {}
-ostream& operator << (ostream& counter, Cornhusker& varidle_)
+ostream& operator << (ostream& counter, TCornhusker& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -38,7 +38,7 @@ ostream& operator << (ostream& counter, Cornhusker& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, Cornhusker& varidle_)
+istream& operator >> (istream& counter, TCornhusker& varidle_)
 {
 	cout << "Enter the Cornhusker brand" << endl;
 	counter >> varidle_.name;
@@ -47,7 +47,7 @@ istream& operator >> (istream& counter, Cornhusker& varidle_)
 	cout << "Enter the Cornhusker speed" << endl;
 	counter >> varidle_.speed;
 	cout << "Enter the Flight Alitude" << endl;
-	counter >> varidle_.FAltitude;
+	counter >> varidle_.faltitude;
 	cout << "Enter the Weight" << endl;
 	counter >> varidle_.weight;
 	cout << "Enter the Engine Capacity" << endl;
@@ -56,7 +56,7 @@ istream& operator >> (istream& counter, Cornhusker& varidle_)
 	{
 		throw("Speed < 0 ");
 	}
-	if (varidle_.FAltitude < 0)
+	if (varidle_.faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -73,43 +73,43 @@ istream& operator >> (istream& counter, Cornhusker& varidle_)
 	return counter;
 }
 
-string Cornhusker::GetSpecification() const
+string TCornhusker::GetSpecification() const
 {
 	return specification;
 }
 
-string Cornhusker::GetLocation()
+string TCornhusker::GetLocation()
 {
 	return location;
 }
 
-string Cornhusker::GetName()
+string TCornhusker::GetName()
 {
 	return name;
 }
 
-string Cornhusker::GetCalor()
+string TCornhusker::GetCalor()
 {
 	return color;
 }
 
 
-double Cornhusker::GetSpeed() const
+double TCornhusker::GetSpeed() const
 {
 	return speed;
 }
 
-double Cornhusker::GetFAltitude()
+double TCornhusker::GetFAltitude()
 {
-	return FAltitude;
+	return faltitude;
 }
 
-double Cornhusker::GetWeight()
+double TCornhusker::GetWeight()
 {
 	return weight;
 }
 
-double Cornhusker::GetEngineCapacity()
+double TCornhusker::GetEngineCapacity()
 {
 	return engine_capacity;
 }

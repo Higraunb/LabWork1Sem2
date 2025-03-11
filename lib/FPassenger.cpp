@@ -1,6 +1,6 @@
 #include "HPassenger.h"
 
-PassengerCar::PassengerCar(string name_, string location_, string calor_,
+TPassengerCar::TPassengerCar(string name_, string location_, string calor_,
 	string specification_, double speed_): name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{speed_}
 {
@@ -10,16 +10,16 @@ PassengerCar::PassengerCar(string name_, string location_, string calor_,
 	}
 }
 
-PassengerCar::PassengerCar() : speed(0.0), name("Passenger transport"),
+TPassengerCar::TPassengerCar() : speed(0.0), name("Passenger transport"),
 location("Ground"), color("Red"), specification("Passenger")
 {
 }
 
-PassengerCar::~PassengerCar()
+TPassengerCar::~TPassengerCar()
 {
 }
 
-ostream& operator << (ostream& counter, PassengerCar& varidle_)
+ostream& operator << (ostream& counter, TPassengerCar& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -31,7 +31,7 @@ ostream& operator << (ostream& counter, PassengerCar& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, PassengerCar& varidle_)
+istream& operator >> (istream& counter, TPassengerCar& varidle_)
 {
 	cout << "Enter the car brand" << endl;
 	counter >> varidle_.name;
@@ -48,29 +48,29 @@ istream& operator >> (istream& counter, PassengerCar& varidle_)
 	return counter;
 }
 
-string PassengerCar::GetLocation()
+string TPassengerCar::GetLocation()
 {
 	return location;
 }
 
 
-string PassengerCar::GetName()
+string TPassengerCar::GetName()
 {
 	return name;
 }
 
-string PassengerCar::GetCalor()
+string TPassengerCar::GetCalor()
 {
 	return color;
 }
 
-string PassengerCar::GetSpecification() const
+string TPassengerCar::GetSpecification() const
 {
 	return specification;
 }
 
 
-double PassengerCar::GetSpeed()
+double TPassengerCar::GetSpeed()
 {
 	return speed;
 }

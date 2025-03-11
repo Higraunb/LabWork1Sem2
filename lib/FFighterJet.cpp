@@ -1,15 +1,15 @@
 #include "HFighterJet.h"
 
-FighterJet::FighterJet(string name_, string location_, string calor_,
+TFighterJet::TFighterJet(string name_, string location_, string calor_,
 	string specification_, double speed_) : name{ name_ }, location{ location_ },
 	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	FAltitude(0.0), weight(28.5), engine_capacity(15000)
+	faltitude(0.0), weight(28.5), engine_capacity(15000)
 {
 	if ((speed < 0) && (speed >= 3000))
 	{
 		throw("Speed < 0 ");
 	}
-	if (FAltitude < 0)
+	if (faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -19,11 +19,11 @@ FighterJet::FighterJet(string name_, string location_, string calor_,
 	}
 }
 
-FighterJet::FighterJet() : speed(2500.0), name("Cy-57"),
+TFighterJet::TFighterJet() : speed(2500.0), name("Cy-57"),
 location("Air"), color("Red"), specification("FighterJet"),
-weight(26.5), FAltitude(0.0), engine_capacity(15000)
+weight(26.5), faltitude(0.0), engine_capacity(15000)
 {}
-ostream& operator << (ostream& counter, FighterJet& varidle_)
+ostream& operator << (ostream& counter, TFighterJet& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
@@ -38,7 +38,7 @@ ostream& operator << (ostream& counter, FighterJet& varidle_)
 	return counter;
 }
 
-istream& operator >> (istream& counter, FighterJet& varidle_)
+istream& operator >> (istream& counter, TFighterJet& varidle_)
 {
 	cout << "Enter the Cornhusker brand" << endl;
 	counter >> varidle_.name;
@@ -47,7 +47,7 @@ istream& operator >> (istream& counter, FighterJet& varidle_)
 	cout << "Enter the Cornhusker speed" << endl;
 	counter >> varidle_.speed;
 	cout << "Enter the Flight Alitude" << endl;
-	counter >> varidle_.FAltitude;
+	counter >> varidle_.faltitude;
 	cout << "Enter the Weight" << endl;
 	counter >> varidle_.weight;
 	cout << "Enter the Engine Capacity" << endl;
@@ -56,7 +56,7 @@ istream& operator >> (istream& counter, FighterJet& varidle_)
 	{
 		throw("Speed < 0 ");
 	}
-	if (varidle_.FAltitude < 0)
+	if (varidle_.faltitude < 0)
 	{
 		throw("FAltitude < 0 ");
 	}
@@ -73,43 +73,43 @@ istream& operator >> (istream& counter, FighterJet& varidle_)
 	return counter;
 }
 
-string FighterJet::GetSpecification() const
+string TFighterJet::GetSpecification() const
 {
 	return specification;
 }
 
-string FighterJet::GetLocation()
+string TFighterJet::GetLocation()
 {
 	return location;
 }
 
-string FighterJet::GetName()
+string TFighterJet::GetName()
 {
 	return name;
 }
 
-string FighterJet::GetCalor()
+string TFighterJet::GetCalor()
 {
 	return color;
 }
 
 
-double FighterJet::GetSpeed() const
+double TFighterJet::GetSpeed() const
 {
 	return speed;
 }
 
-double FighterJet::GetFAltitude()
+double TFighterJet::GetFAltitude()
 {
-	return FAltitude;
+	return faltitude;
 }
 
-double FighterJet::GetWeight()
+double TFighterJet::GetWeight()
 {
 	return weight;
 }
 
-double FighterJet::GetEngineCapacity()
+double TFighterJet::GetEngineCapacity()
 {
 	return engine_capacity;
 }

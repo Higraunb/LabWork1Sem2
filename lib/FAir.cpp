@@ -1,38 +1,69 @@
 #include "HAir.h"
 
-Air::Air() : speed(0.0), name("Air transport"),
-location("Air"), FAltitude(0.0)
+TAir::TAir() : speed(0.0), name("Air transport"),
+location("Air"), faltitude(0.0)
 {}
 
-Air::~Air()
+TAir::~TAir()
 {}
 
 
-string Air::GetLocation()
+string TAir::GetLocation()
 {
 	return location;
 }
 
-string Air::GetName()
+string TAir::GetName()
 {
 	return name;
 }
 
-double Air::GetSpeed()
+double TAir::GetSpeed()
 {
 	return speed;
 }
 
-double Air::GetFAltitude()
+double TAir::GetFAltitude()
 {
-	return FAltitude;
+	return faltitude;
 }
 
-double Air::SetFAltitude()
+double TAir::SetFAltitude()
 {
-	cin >> FAltitude;
-	if (FAltitude < 0)
+	cin >> faltitude;
+	if (faltitude < 0)
 	{
 		throw("FAltirude");
 	}
+}
+ostream& operator << (ostream& counter, TAir& varidle)
+{
+	counter << "Stat : " << endl << "name - " << varidle.GetName()
+		<< endl << "location - " << varidle.GetLocation()
+		<< endl << "Speed - " << varidle.GetSpeed()
+		<< endl << "Flight Alitude - " << varidle.GetFAltitude() << endl;
+	system("pause");
+	system("cls");
+	return counter;
+}
+
+istream& operator >> (istream& counter, TAir& varidle_)
+{
+	cout << "Enter the plane brand" << endl;
+	counter >> varidle_.name;
+	cout << "Enter the plane speed" << endl;
+	counter >> varidle_.speed;
+	cout << "Enter the plane Flight Alitude" << endl;
+	counter >> varidle_.faltitude;
+	if (varidle_.speed < 0)
+	{
+		throw("Speed < 0 ");
+	}
+	if (varidle_.faltitude < 0)
+	{
+		throw("Speed < 0 ");
+	}
+	system("pause");
+	system("cls");
+	return counter;
 }
