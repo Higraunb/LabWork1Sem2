@@ -1,6 +1,6 @@
 #pragma once
 #include "HPassenger.h"
-class TUAZ :protected TPassengerCar
+class TUAZ :public TPassengerCar
 {
 public:
 	TUAZ();

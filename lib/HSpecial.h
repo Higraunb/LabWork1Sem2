@@ -1,6 +1,6 @@
 #pragma once
 #include "HGround.h"
-class TSpecialCar :TGround
+class TSpecialCar : public TGround
 {
 public:
 	TSpecialCar();

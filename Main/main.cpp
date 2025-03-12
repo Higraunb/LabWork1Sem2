@@ -1,7 +1,6 @@
 #include "HTransport.h"
 #include "HGround.h"
 #include "HAir.h"
-#include "HCar.h"
 #include "HSpecial.h"
 #include "HPlane.h"
 #include "HPassenger.h"
@@ -9,11 +8,18 @@
 #include "HAmbulance.h"
 #include "HFireTruck.h"
 #include "HUAZ.h"
+#include "HCornhusker.h"
+#include "HMultiScrew.h"
+#include "HSingleRotor.h"
+#include "HHelicopter.h"
+void Print(TTransport& var)
+{
+	cout << "Name -" << var.GetName() << endl;
+}
 int main()
 {
 	TLada f;
-	cin >> f;
-	cout << f;
 	TAmbulance a;
-	cout << a;
+	Print(a);
+	Print(f);
 }

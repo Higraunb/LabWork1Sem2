@@ -1,6 +1,6 @@
 #pragma once
 #include "HAir.h"
-class TPlane : TAir
+class TPlane : public TAir
 {
 public:
 	TPlane();

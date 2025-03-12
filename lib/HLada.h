@@ -1,6 +1,6 @@
 #pragma once
 #include "HPassenger.h"
-class TLada :protected TPassengerCar
+class TLada :public TPassengerCar
 {
 public:
 	TLada();
