@@ -18,6 +18,7 @@ void Print(TTransport& var)
 }
 int main()
 {
+	TGround q ;
 	TLada f;
 	TAmbulance a;
 	Print(a);
