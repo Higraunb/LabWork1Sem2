@@ -49,11 +49,11 @@ ostream& operator << (ostream& counter, TAir& varidle)
 
 istream& operator >> (istream& counter, TAir& varidle_)
 {
-	cout << "Enter the plane brand" << endl;
+	cout << "Enter brand" << endl;
 	counter >> varidle_.name;
-	cout << "Enter the plane speed" << endl;
+	cout << "Enter speed" << endl;
 	counter >> varidle_.speed;
-	cout << "Enter the plane Flight Alitude" << endl;
+	cout << "Enter Flight Alitude" << endl;
 	counter >> varidle_.faltitude;
 	if (varidle_.speed < 0)
 	{

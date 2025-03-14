@@ -4,6 +4,7 @@ class TGround : public TTransport
 {
 public:
 	TGround();
+	TGround(TGround& val);
 	~TGround();
 	string GetName()  override;
 	string GetLocation()  override;

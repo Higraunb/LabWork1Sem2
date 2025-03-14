@@ -18,9 +18,9 @@ void Print(TTransport& var)
 }
 int main()
 {
-	TGround q ;
-	TLada f;
-	TAmbulance a;
-	Print(a);
-	Print(f);
+	TGround q;
+	cin >> q;
+	cout << q;
+	TGround f(q);
+	cout << f;
 }

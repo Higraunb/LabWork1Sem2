@@ -40,11 +40,11 @@ ostream& operator << (ostream& counter, TMultiScrew& varidle_)
 
 istream& operator >> (istream& counter, TMultiScrew& varidle_)
 {
-	cout << "Enter the Cornhusker brand" << endl;
+	cout << "Enter the Helicopter brand" << endl;
 	counter >> varidle_.name;
-	cout << "Enter the Cornhusker color" << endl;
+	cout << "Enter the Helicopter color" << endl;
 	counter >> varidle_.color;
-	cout << "Enter the Cornhusker speed" << endl;
+	cout << "Enter the Helicopter speed" << endl;
 	counter >> varidle_.speed;
 	cout << "Enter the Flight Alitude" << endl;
 	counter >> varidle_.faltitude;
