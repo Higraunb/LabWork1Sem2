@@ -6,7 +6,10 @@ class TTransport
 public:
 	TTransport();
 	~TTransport();
-	virtual string GetName() = 0;
-	virtual string GetLocation() = 0;
-	virtual double GetSpeed() = 0;
+	virtual string GetName();
+	virtual string GetLocation();
+	virtual double GetSpeed();
+protected:
+	string name, location;
+	double speed;
 };

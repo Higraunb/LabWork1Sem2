@@ -21,7 +21,7 @@ TEST(TSingleRotor, can_get_speed)
 TEST(TSingleRotor, can_get_FAltitude)
 {
   TSingleRotor bf;
-  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 100.0);
 }
 
 TEST(TSingleRotor, can_get_Weight)

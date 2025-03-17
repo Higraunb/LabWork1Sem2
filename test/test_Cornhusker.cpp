@@ -21,7 +21,7 @@ TEST(TCornhusker, can_get_speed)
 TEST(TCornhusker, can_get_FAltitude)
 {
   TCornhusker bf;
-  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 100.0);
 }
 
 TEST(TCornhusker, can_get_Weight)

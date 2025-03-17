@@ -15,5 +15,5 @@ TEST(TSpecialCar, cant_create_negative_values)
 TEST(TSpecialCar, can_get_speed)
 {
   TSpecialCar bf;
-  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 60.0);
 }

@@ -1,7 +1,9 @@
 #include "HGround.h"
-TGround::TGround() : speed(0.0), name("Ground transport"),
-location("Ground")
-{}
+TGround::TGround()
+{
+	name = "Ground Transport";
+	location = "Ground";
+}
 
 TGround::TGround(TGround& val)
 {
@@ -12,21 +14,6 @@ TGround::TGround(TGround& val)
 
 TGround :: ~TGround()
 {}
-
-string TGround::GetLocation()
-{
-	return location;
-}
-
-double TGround::GetSpeed()
-{
-	return speed;
-}
-
-string TGround::GetName()
-{
-	return name;
-}
 
 ostream& operator << (ostream& counter, TGround& varidle)
 {

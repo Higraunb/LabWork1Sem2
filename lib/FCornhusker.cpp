@@ -1,10 +1,14 @@
 #include "HCornhusker.h"
 
 TCornhusker::TCornhusker(string name_, string location_, string calor_,
-	string specification_, double speed_) : name{ name_ }, location{ location_ },
-	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	faltitude(0.0), weight(3.4), engine_capacity(1000)
+	string specification_, double speed_) : weight(3.4), engine_capacity(1000)
 {
+	color = calor_ ;
+	specification = specification_;
+	speed = speed_;
+	faltitude = 100.0;
+	name = name_;
+	location = location_;
 	if ((speed < 0) && (speed >= 170))
 	{
 		throw("Speed < 0 ");
@@ -19,10 +23,12 @@ TCornhusker::TCornhusker(string name_, string location_, string calor_,
 	}
 }
 
-TCornhusker::TCornhusker() : speed(130.0), name("An-2"),
-location("Air"), color("Red"), specification("Cornhusker"),
-weight(3.4), faltitude(0.0), engine_capacity(1000)
-{}
+TCornhusker::TCornhusker() : weight(3.4) ,engine_capacity(1000)
+{
+	specification = "Cornhusker";
+	speed = 130.0;
+	name = "An-2";
+}
 ostream& operator << (ostream& counter, TCornhusker& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
@@ -31,7 +37,7 @@ ostream& operator << (ostream& counter, TCornhusker& varidle_)
 		<< endl << "Specification - " << varidle_.GetSpecification()
 		<< endl << "Speed - " << varidle_.GetSpeed() 
 		<< endl << "Flight Alitude - " << varidle_.GetFAltitude()
-		<< endl << "Weigt - " << varidle_.GetWeight() << "t"
+		<< endl << "Weigt - " << varidle_.GetWeight() 
 		<< endl << "Engine Capacity - " << varidle_.GetEngineCapacity() << endl;
 	system("pause");
 	system("cls");
@@ -73,36 +79,6 @@ istream& operator >> (istream& counter, TCornhusker& varidle_)
 	return counter;
 }
 
-string TCornhusker::GetSpecification() const
-{
-	return specification;
-}
-
-string TCornhusker::GetLocation()
-{
-	return location;
-}
-
-string TCornhusker::GetName()
-{
-	return name;
-}
-
-string TCornhusker::GetCalor()
-{
-	return color;
-}
-
-
-double TCornhusker::GetSpeed() const
-{
-	return speed;
-}
-
-double TCornhusker::GetFAltitude()
-{
-	return faltitude;
-}
 
 double TCornhusker::GetWeight()
 {

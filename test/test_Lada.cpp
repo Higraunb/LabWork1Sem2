@@ -15,7 +15,7 @@ TEST(TLada, cant_create_negative_values)
 TEST(TLada, can_get_speed)
 {
   TLada bf;
-  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 60.0);
 }
 
 TEST(TLada, can_get_GetCountOfPeople)

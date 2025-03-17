@@ -15,5 +15,5 @@ TEST(TPlane, cant_create_negative_values)
 TEST(TPlane, can_get_speed)
 {
   TPlane bf;
-  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 100.0);
 }

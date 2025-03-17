@@ -1,27 +1,14 @@
 #include "HAir.h"
 
-TAir::TAir() : speed(0.0), name("Air transport"),
-location("Air"), faltitude(0.0)
-{}
+TAir::TAir() : faltitude(100.0)
+{
+	speed = 100.0;
+	name = "Air transport";
+	location = "Air";
+}
 
 TAir::~TAir()
 {}
-
-
-string TAir::GetLocation()
-{
-	return location;
-}
-
-string TAir::GetName()
-{
-	return name;
-}
-
-double TAir::GetSpeed()
-{
-	return speed;
-}
 
 double TAir::GetFAltitude()
 {
@@ -33,7 +20,7 @@ double TAir::SetFAltitude()
 	cin >> faltitude;
 	if (faltitude < 0)
 	{
-		throw("FAltirude");
+		throw("FAltirude < 0");
 	}
 }
 ostream& operator << (ostream& counter, TAir& varidle)

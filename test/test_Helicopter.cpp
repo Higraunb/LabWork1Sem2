@@ -15,11 +15,11 @@ TEST(THelicopter, cant_create_negative_values)
 TEST(THelicopter, can_get_speed)
 {
   THelicopter bf;
-  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 100.0);
 }
 
 TEST(THelicopter, can_get_FAltitude)
 {
   THelicopter bf;
-  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 100.0);
 }

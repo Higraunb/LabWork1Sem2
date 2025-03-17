@@ -1,9 +1,12 @@
 #include "HPlane.h"
 
 TPlane::TPlane(string name_, string location_, string calor_,
-	string specification_, double speed_) : name{ name_ }, location{ location_ }
-	, color{ calor_ }, specification{ specification_ }, speed{ speed_ }, faltitude{0.0}
+	string specification_, double speed_) : color{ calor_ }, specification{ specification_ }
 {
+	speed = speed_;
+	faltitude = 100.0;
+	name = name_;
+	location = location_;
 	if (speed < 0)
 	{
 		throw("Speed < 0 ");
@@ -14,17 +17,15 @@ TPlane::TPlane(string name_, string location_, string calor_,
 	}
 }
 
-TPlane::TPlane() : speed(0.0), name("Plane"),
-location("Air"), color("Red"), specification("Plane"), faltitude(0.0)
-{}
+TPlane::TPlane() : color("Red"), specification("Plane")
+{
+	speed = 100.0;
+}
 
 TPlane::~TPlane()
 {
 }
-double TPlane::GetFAltitude()
-{
-	return faltitude;
-}
+
 ostream& operator << (ostream& counter, TPlane& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
@@ -61,17 +62,6 @@ istream& operator >> (istream& counter, TPlane& varidle_)
 	return counter;
 }
 
-string TPlane::GetLocation()
-{
-	return location;
-}
-
-
-string TPlane::GetName()
-{
-	return name;
-}
-
 string TPlane::GetCalor()
 {
 	return color;
@@ -80,9 +70,4 @@ string TPlane::GetCalor()
 string TPlane::GetSpecification() const
 {
 	return specification;
-}
-
-double TPlane::GetSpeed()
-{
-	return speed;
 }

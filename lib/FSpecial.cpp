@@ -1,18 +1,21 @@
 #include "HSpecial.h"
 
 TSpecialCar::TSpecialCar(string name_, string location_, string calor_, 
-	string specification_, double speed_): name{ name_ }, location{ location_ }
-	, color{ calor_ }, specification{ specification_ }, speed{speed_}
+	string specification_, double speed_): color{ calor_ }, specification{ specification_ }
 {
+	name = name_; 
+	location = location_;
+	speed = speed_;
 	if (speed < 0)
 	{
 		throw("Speed < 0 ");
 	}
 }
 
-TSpecialCar::TSpecialCar() : speed(0.0), name("Special transport"),
-location("Ground"), color("Red"), specification("Special")
-{}
+TSpecialCar::TSpecialCar() :  color("Red"), specification("Special")
+{
+	name = "Special transport";
+}
 
 TSpecialCar::~TSpecialCar()
 {
@@ -51,17 +54,6 @@ istream& operator >> (istream& counter, TSpecialCar& varidle_)
 	return counter;
 }
 
-string TSpecialCar::GetLocation()
-{
-	return location;
-}
-
-
-string TSpecialCar::GetName()
-{
-	return name;
-}
-
 string TSpecialCar::GetCalor()
 {
 	return color;
@@ -70,9 +62,4 @@ string TSpecialCar::GetCalor()
 string TSpecialCar::GetSpecification() const
 {
 	return specification;
-}
-
-double TSpecialCar::GetSpeed()
-{
-	return speed;
 }

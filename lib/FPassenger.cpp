@@ -1,18 +1,20 @@
 #include "HPassenger.h"
 
 TPassengerCar::TPassengerCar(string name_, string location_, string calor_,
-	string specification_, double speed_): name{ name_ }, location{ location_ },
-	color{ calor_ }, specification{ specification_ }, speed{speed_}
+	string specification_, double speed_): color{ calor_ }, specification{ specification_ }
 {
+	name = name_;
+	location = location_;
+	speed = speed_;
 	if (speed < 0)
 	{
 		throw("Speed < 0 ");
 	}
 }
 
-TPassengerCar::TPassengerCar() : speed(0.0), name("Passenger transport"),
-location("Ground"), color("Red"), specification("Passenger")
+TPassengerCar::TPassengerCar() :  color("Red"), specification("Passenger")
 {
+	name = "Passenger transport";
 }
 
 TPassengerCar::~TPassengerCar()
@@ -48,17 +50,6 @@ istream& operator >> (istream& counter, TPassengerCar& varidle_)
 	return counter;
 }
 
-string TPassengerCar::GetLocation()
-{
-	return location;
-}
-
-
-string TPassengerCar::GetName()
-{
-	return name;
-}
-
 string TPassengerCar::GetCalor()
 {
 	return color;
@@ -67,10 +58,4 @@ string TPassengerCar::GetCalor()
 string TPassengerCar::GetSpecification() const
 {
 	return specification;
-}
-
-
-double TPassengerCar::GetSpeed()
-{
-	return speed;
 }

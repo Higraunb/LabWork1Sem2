@@ -1,19 +1,23 @@
 #include "HFireTruck.h"
 
 TFireTruck::TFireTruck(string name_, string location_, string calor_, 
-	string specification_, double speed_) : name{ name_ }, location{ location_ },
-color{ calor_ }, specification{ specification_ }, speed{ speed_ }, carcapacity(8)
+	string specification_, double speed_) :  carcapacity(8)
 {
+	name =  name_;
+	location = location_;
+	color = calor_; 
+	specification = specification_;
+	speed = speed_;
 	if (speed < 0)
 	{
 		throw("Speed < 0 ");
 	}
 }
 
-TFireTruck::TFireTruck() : speed(0.0), name("FireTruck"),
-location("Ground"), color("Red"), specification("Ural 5557-1112-60M"), carcapacity(8)
+TFireTruck::TFireTruck() :  carcapacity(8)
 {
-
+	name = "FireTruck";
+	specification = "Ural 5557-1112-60M";
 }
 
 ostream& operator << (ostream& counter, TFireTruck& varidle_)
@@ -22,8 +26,8 @@ ostream& operator << (ostream& counter, TFireTruck& varidle_)
 		<< endl << "location - " << varidle_.GetLocation()
 		<< endl << "Color - " << varidle_.GetCalor()
 		<< endl << "Specification - " << varidle_.GetSpecification()
-		<< endl << "Speed - " << varidle_.GetSpeed() << endl
-		<< endl << " Car capacity - " << varidle_.carcapacity << endl;
+		<< endl << "Speed - " << varidle_.GetSpeed() 
+		<< endl << "Car capacity - " << varidle_.carcapacity << endl;
 	system("pause");
 	system("cls");
 	return counter;
@@ -50,32 +54,6 @@ istream& operator >> (istream& counter, TFireTruck& varidle_)
 	system("pause");
 	system("cls");
 	return counter;
-}
-
-string TFireTruck::GetSpecification() const
-{
-	return specification;
-}
-
-string TFireTruck::GetLocation()
-{
-	return location;
-}
-
-string TFireTruck::GetName()
-{
-	return name;
-}
-
-string TFireTruck::GetCalor()
-{
-	return color;
-}
-
-
-double TFireTruck::GetSpeed() const
-{
-	return speed;
 }
 
 unsigned TFireTruck::GetCountOfPeople()

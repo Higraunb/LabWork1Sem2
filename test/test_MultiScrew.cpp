@@ -21,7 +21,7 @@ TEST(TMultiScrew, can_get_speed)
 TEST(TMultiScrew, can_get_FAltitude)
 {
   TMultiScrew bf;
-  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 100.0);
 }
 
 TEST(TMultiScrew, can_get_Weight)

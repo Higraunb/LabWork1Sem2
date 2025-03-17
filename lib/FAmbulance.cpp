@@ -1,25 +1,31 @@
 #include "HAmbulance.h"
 
 TAmbulance::TAmbulance(string name_, string location_, string calor_,
-	string specification_, double speed_) : name{ name_ }, location{ location_ },
-	color{ calor_ }, specification{ specification_ }, speed{ speed_ }, carcapacity(6)
+	string specification_, double speed_) :  carcapacity(6)
 {
+	name = name_; 
+	location = location_;
+	color = calor_; 
+	specification = specification_;
+	speed = speed_;
 	if (speed < 0)
 	{
 		throw("Speed < 0 ");
 	}
 }
 
-TAmbulance::TAmbulance(): speed(0.0), name("Ambulance"),
-location("Ground"), color("Red"), specification("MAZ 365022"), carcapacity(6)
-{}
+TAmbulance::TAmbulance(): carcapacity(6)
+{
+	name = "Ambulance";
+	specification = "MAZ 365022";
+}
 ostream& operator << (ostream& counter, TAmbulance& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
 		<< endl << "location - " << varidle_.GetLocation()
 		<< endl << "Color - " << varidle_.GetCalor()
 		<< endl << "Specification - " << varidle_.GetSpecification()
-		<< endl << "Speed - " << varidle_.GetSpeed() << endl
+		<< endl << "Speed - " << varidle_.GetSpeed()
 		<< endl << " Car capacity - " << varidle_.carcapacity << endl;
 	system("pause");
 	system("cls");
@@ -47,32 +53,6 @@ istream& operator >> (istream& counter, TAmbulance& varidle_)
 	system("pause");
 	system("cls");
 	return counter;
-}
-
-string TAmbulance::GetSpecification() const
-{
-	return specification;
-}
-
-string TAmbulance::GetLocation()
-{
-	return location;
-}
-
-string TAmbulance::GetName()
-{
-	return name;
-}
-
-string TAmbulance::GetCalor()
-{
-	return color;
-}
-
-
-double TAmbulance::GetSpeed() const
-{
-	return speed;
 }
 
 unsigned TAmbulance::GetCountOfPeople()

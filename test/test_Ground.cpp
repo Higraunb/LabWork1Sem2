@@ -10,5 +10,5 @@ TEST(TGround, can_create_Ground)
 TEST(TGround, can_get_speed)
 {
   TGround bf;
-  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetSpeed(), 60.0);
 }

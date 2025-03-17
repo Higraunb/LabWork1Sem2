@@ -1,10 +1,14 @@
 #include "HFighterJet.h"
 
 TFighterJet::TFighterJet(string name_, string location_, string calor_,
-	string specification_, double speed_) : name{ name_ }, location{ location_ },
-	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	faltitude(0.0), weight(28.5), engine_capacity(15000)
+	string specification_, double speed_) : weight(28.5), engine_capacity(15000)
 {
+	color = calor_;
+	specification = specification_;
+	speed = speed_;
+	faltitude = 100.0;
+	name = name_;
+	location = location_;
 	if ((speed < 0) && (speed >= 3000))
 	{
 		throw("Speed < 0 ");
@@ -19,10 +23,13 @@ TFighterJet::TFighterJet(string name_, string location_, string calor_,
 	}
 }
 
-TFighterJet::TFighterJet() : speed(2500.0), name("Cy-57"),
-location("Air"), color("Red"), specification("FighterJet"),
-weight(26.5), faltitude(0.0), engine_capacity(15000)
-{}
+TFighterJet::TFighterJet() :weight(26.5), engine_capacity(15000)
+{
+	speed = 2500.0;
+	name = "Cy-57";
+	specification = "FighterJet";
+	weight = 26.5;
+}
 ostream& operator << (ostream& counter, TFighterJet& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
@@ -31,7 +38,7 @@ ostream& operator << (ostream& counter, TFighterJet& varidle_)
 		<< endl << "Specification - " << varidle_.GetSpecification()
 		<< endl << "Speed - " << varidle_.GetSpeed()
 		<< endl << "Flight Alitude - " << varidle_.GetFAltitude()
-		<< endl << "Weigt - " << varidle_.GetWeight() << "t"
+		<< endl << "Weigt - " << varidle_.GetWeight()
 		<< endl << "Engine Capacity - " << varidle_.GetEngineCapacity() << endl;
 	system("pause");
 	system("cls");
@@ -71,37 +78,6 @@ istream& operator >> (istream& counter, TFighterJet& varidle_)
 	system("pause");
 	system("cls");
 	return counter;
-}
-
-string TFighterJet::GetSpecification() const
-{
-	return specification;
-}
-
-string TFighterJet::GetLocation()
-{
-	return location;
-}
-
-string TFighterJet::GetName()
-{
-	return name;
-}
-
-string TFighterJet::GetCalor()
-{
-	return color;
-}
-
-
-double TFighterJet::GetSpeed() const
-{
-	return speed;
-}
-
-double TFighterJet::GetFAltitude()
-{
-	return faltitude;
 }
 
 double TFighterJet::GetWeight()

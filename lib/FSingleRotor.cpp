@@ -1,10 +1,14 @@
 #include "HSingleRotor.h"
 
 TSingleRotor::TSingleRotor(string name_, string location_, string calor_,
-	string specification_, double speed_) : name{ name_ }, location{ location_ },
-	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	faltitude(0.0), weight(28.5), engine_capacity(11400)
+	string specification_, double speed_) : weight(28.5), engine_capacity(11400)
 {
+	color = calor_;
+	specification = specification_;
+	speed = speed_;
+	faltitude = 100.0;
+	name = name_;
+	location = location_;
 	if ((speed < 0) && (speed >= 270))
 	{
 		throw("Speed < 0 ");
@@ -19,10 +23,13 @@ TSingleRotor::TSingleRotor(string name_, string location_, string calor_,
 	}
 }
 
-TSingleRotor::TSingleRotor() : speed(200.0), name("Mi-26"),
-location("Air"), color("Red"), specification("SingleRotor"),
-weight(28.5), faltitude(0.0), engine_capacity(11400)
-{}
+TSingleRotor::TSingleRotor() : weight(28.5), engine_capacity(11400)
+{
+	speed = 200.0;
+	name = "Mi-26";
+	specification = "SingleRotor";
+	weight = 28.5;
+}
 ostream& operator << (ostream& counter, TSingleRotor& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
@@ -31,7 +38,7 @@ ostream& operator << (ostream& counter, TSingleRotor& varidle_)
 		<< endl << "Specification - " << varidle_.GetSpecification()
 		<< endl << "Speed - " << varidle_.GetSpeed()
 		<< endl << "Flight Alitude - " << varidle_.GetFAltitude()
-		<< endl << "Weigt - " << varidle_.GetWeight() << "t"
+		<< endl << "Weigt - " << varidle_.GetWeight()
 		<< endl << "Engine Capacity - " << varidle_.GetEngineCapacity() << endl;
 	system("pause");
 	system("cls");
@@ -71,37 +78,6 @@ istream& operator >> (istream& counter, TSingleRotor& varidle_)
 	system("pause");
 	system("cls");
 	return counter;
-}
-
-string TSingleRotor::GetSpecification() const
-{
-	return specification;
-}
-
-string TSingleRotor::GetLocation()
-{
-	return location;
-}
-
-string TSingleRotor::GetName()
-{
-	return name;
-}
-
-string TSingleRotor::GetCalor()
-{
-	return color;
-}
-
-
-double TSingleRotor::GetSpeed() const
-{
-	return speed;
-}
-
-double TSingleRotor::GetFAltitude()
-{
-	return faltitude;
 }
 
 double TSingleRotor::GetWeight()

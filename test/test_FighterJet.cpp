@@ -21,7 +21,7 @@ TEST(TFighterJet, can_get_speed)
 TEST(TFighterJet, can_get_FAltitude)
 {
   TFighterJet bf;
-  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 0.0);
+  EXPECT_DOUBLE_EQ(bf.GetFAltitude(), 100.0);
 }
 
 TEST(TFighterJet, can_get_Weight)

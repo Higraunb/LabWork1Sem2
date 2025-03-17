@@ -1,10 +1,14 @@
 #include "HMultiScrew.h"
 
 TMultiScrew::TMultiScrew(string name_, string location_, string calor_,
-	string specification_, double speed_) : name{ name_ }, location{ location_ },
-	color{ calor_ }, specification{ specification_ }, speed{ speed_ },
-	faltitude(0.0), weight(2.5), engine_capacity(580)
+	string specification_, double speed_) : weight(2.5), engine_capacity(580)
 {
+	color = calor_;
+	specification = specification_;
+	speed = speed_;
+	faltitude = 100.0;
+	name = name_;
+	location = location_;
 	if ((speed < 0) && (speed >= 180))
 	{
 		throw("Speed < 0 ");
@@ -19,10 +23,13 @@ TMultiScrew::TMultiScrew(string name_, string location_, string calor_,
 	}
 }
 
-TMultiScrew::TMultiScrew() : speed(130.0), name("Mi-1"),
-location("Air"), color("Red"), specification("MultiScrew"),
-weight(2.5), faltitude(0.0), engine_capacity(580)
-{}
+TMultiScrew::TMultiScrew() : weight(2.5), engine_capacity(580)
+{
+	speed = 130.0; 
+	name = "Mi-1";
+	specification = "MultiScrew";
+	weight = 2.5;
+}
 ostream& operator << (ostream& counter, TMultiScrew& varidle_)
 {
 	counter << "Stat : " << endl << "name - " << varidle_.GetName()
@@ -31,7 +38,7 @@ ostream& operator << (ostream& counter, TMultiScrew& varidle_)
 		<< endl << "Specification - " << varidle_.GetSpecification()
 		<< endl << "Speed - " << varidle_.GetSpeed()
 		<< endl << "Flight Alitude - " << varidle_.GetFAltitude()
-		<< endl << "Weigt - " << varidle_.GetWeight() << "t"
+		<< endl << "Weigt - " << varidle_.GetWeight()
 		<< endl << "Engine Capacity - " << varidle_.GetEngineCapacity() << endl;
 	system("pause");
 	system("cls");
@@ -71,37 +78,6 @@ istream& operator >> (istream& counter, TMultiScrew& varidle_)
 	system("pause");
 	system("cls");
 	return counter;
-}
-
-string TMultiScrew::GetSpecification() const
-{
-	return specification;
-}
-
-string TMultiScrew::GetLocation()
-{
-	return location;
-}
-
-string TMultiScrew::GetName()
-{
-	return name;
-}
-
-string TMultiScrew::GetCalor()
-{
-	return color;
-}
-
-
-double TMultiScrew::GetSpeed() const
-{
-	return speed;
-}
-
-double TMultiScrew::GetFAltitude()
-{
-	return faltitude;
 }
 
 double TMultiScrew::GetWeight()
